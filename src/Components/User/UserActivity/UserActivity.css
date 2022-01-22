@@ -1,0 +1,27 @@
+.userActivity-header {
+  display: flex;
+  overflow-x: scroll;
+  margin-top: 30px;
+}
+
+.userActivity-header::-webkit-scrollbar {
+  display: none;
+}
+
+.userActivity-header {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.userActivity-header > li {
+  list-style-type: none;
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  background-color: gray;
+  padding: 5px;
+  cursor: pointer;
+}
