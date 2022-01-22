@@ -1,0 +1,27 @@
+.inputBox {
+  width: 30%;
+  display: flex;
+}
+
+.inputBox-input {
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem;
+  border: 0px solid #000;
+  outline: none;
+  background-color: #f2f2f2;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.inputBox-btn {
+  width: 30%;
+  border: 1px solid #cd161c;
+  outline: none;
+  background-color: #cd161c;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

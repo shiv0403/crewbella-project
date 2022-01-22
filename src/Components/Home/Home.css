@@ -1,0 +1,11 @@
+.home {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  height: 60vh;
+}
+
+.home > h1 {
+  font-size: 3rem;
+  letter-spacing: 5px;
+}
