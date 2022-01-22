@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import "./User.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import UserBio from "./UserBio/UserBio";
 
 function User(props) {
   const [user, setUser] = useState("");
@@ -26,9 +28,13 @@ function User(props) {
 
   return (
     <div className={"user"}>
-      <h1>This is crewbella</h1>
       {error && <h1>{error}</h1>}
-      {user && <h1>{user?.basic.fullname}</h1>}
+      {user && (
+        <div className={"user-main"}>
+          {/*{user bio}*/}
+          <UserBio user={user} />
+        </div>
+      )}
     </div>
   );
 }
