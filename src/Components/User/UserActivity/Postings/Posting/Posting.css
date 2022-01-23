@@ -48,9 +48,6 @@
   letter-spacing: 1px;
 }
 
-.posting-hidden {
-}
-
 .posting-description {
   padding: 20px;
   padding-top: -20px;
@@ -94,10 +91,13 @@
   padding: 0 0px;
   margin-top: 10px;
   margin-bottom: 20px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.fas {
+  cursor: pointer;
 }
 
 .opener i {
@@ -130,4 +130,12 @@
 
 .rotate {
   transform: rotate(180deg);
+}
+
+.posting-hidden {
+  transition: 0.5s ease;
+}
+
+.posting-active {
+  transition: 0.5s ease;
 }

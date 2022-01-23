@@ -1,27 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Posting.css";
 import { format } from "timeago.js";
 
-const opener = document.querySelectorAll(".opener");
-const cont = document.querySelectorAll(".content");
-const arrow = document.querySelectorAll(".opener i");
-
-function dropdown(open, content, icon) {
-  for (let i = 0; i < open.length; i++) {
-    open[i].addEventListener("click", function () {
-      content[i].classList.toggle("content-active");
-      icon[i].classList.toggle("rotate");
-      for (let j = 0; j < open.length; j++) {
-        if (i !== j) {
-          content[j].classList.remove("content-active");
-          icon[j].classList.remove("rotate");
-        }
-      }
-    });
-  }
-}
-
 function Posting({ posting }) {
+  const [active, setActive] = useState(false);
+
   return (
     <div className={"posting"}>
       <div
@@ -52,49 +35,55 @@ function Posting({ posting }) {
           <p>{posting.openings}</p>
         </div>
       </div>
-      <div className={"posting-hidden content"}>
-        <div className="posting-description">{posting.description}</div>
-        <div className="posting-further ">
-          {posting.job_type && (
-            <p className={"posting-furtherRow"}>
-              <span className={"posting-further-heading"}>Job Type</span>
-              <span className={"posting-further-text"}>{posting.job_type}</span>
-            </p>
-          )}
+      {active && (
+        <div className={"posting-hidden"}>
+          <div className="posting-description">{posting.description}</div>
+          <div className="posting-further ">
+            {posting.job_type && (
+              <p className={"posting-furtherRow"}>
+                <span className={"posting-further-heading"}>Job Type</span>
+                <span className={"posting-further-text"}>
+                  {posting.job_type}
+                </span>
+              </p>
+            )}
 
-          {posting.skills && (
-            <p className={"posting-furtherRow"}>
-              <span className={"posting-further-heading"}>Skills</span>
-              <span className={"posting-further-text"}>{posting.skills}</span>
-            </p>
-          )}
+            {posting.skills && (
+              <p className={"posting-furtherRow"}>
+                <span className={"posting-further-heading"}>Skills</span>
+                <span className={"posting-further-text"}>{posting.skills}</span>
+              </p>
+            )}
 
-          {posting.time_period && (
-            <p className={"posting-furtherRow"}>
-              <span className={"posting-further-heading"}>Time Period</span>
-              <span className={"posting-further-text"}>
-                {posting.time_period}
-              </span>
-            </p>
-          )}
+            {posting.time_period && (
+              <p className={"posting-furtherRow"}>
+                <span className={"posting-further-heading"}>Time Period</span>
+                <span className={"posting-further-text"}>
+                  {posting.time_period}
+                </span>
+              </p>
+            )}
 
-          {posting.time_start && (
-            <p className={"posting-furtherRow"}>
-              <span className={"posting-further-heading"}>Time Start</span>
-              <span className={"posting-further-text"}>
-                {posting.time_start}
-              </span>
-            </p>
-          )}
+            {posting.time_start && (
+              <p className={"posting-furtherRow"}>
+                <span className={"posting-further-heading"}>Time Start</span>
+                <span className={"posting-further-text"}>
+                  {posting.time_start}
+                </span>
+              </p>
+            )}
+          </div>
         </div>
-      </div>
+      )}
+
       <div className="posting-footer">
-        <div className="opener">
-          <i
-            className="fas fa-chevron-down"
-            onClick={dropdown(opener, cont, arrow)}
-            style={{ width: "20px" }}
-          ></i>
+        <div className="opener" onClick={() => setActive((prev) => !prev)}>
+          {active ? (
+            <i className={"fas fa-chevron-up"} style={{ width: "20px" }}></i>
+          ) : (
+            <i className={"fas fa-chevron-down"} style={{ width: "20px" }}></i>
+          )}
+
           <p>{format(posting.created_at)}</p>
         </div>
       </div>

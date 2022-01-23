@@ -6,6 +6,15 @@
   border-radius: 20px;
 }
 
+.work-link {
+  color: #000;
+  text-decoration: none;
+}
+
+.work-link:hover {
+  border-bottom: 1px solid #000;
+}
+
 .work-img {
   width: 100%;
   max-height: 160px;
@@ -16,8 +25,7 @@
 .work-title {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  justify-content: space-around;
   padding: 10px;
 }
 
@@ -29,7 +37,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .work-desc {
@@ -48,6 +56,10 @@
   color: gray;
   letter-spacing: 1px;
   font-size: 13px;
+}
+
+.work-about {
+  padding: 10px;
 }
 
 .work-opener {

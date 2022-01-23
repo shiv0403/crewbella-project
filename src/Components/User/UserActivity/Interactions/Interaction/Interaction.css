@@ -42,11 +42,12 @@
 
 .interaction-content {
   width: 100%;
-  min-height: 0;
-  max-height: 0;
   overflow: hidden;
-  padding: 0px;
+  padding: 10px;
   transition: 0.5s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .interaction-content-active {
@@ -57,9 +58,6 @@
   transition: 0.5s ease;
   margin-bottom: 10px;
   margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .rotate {

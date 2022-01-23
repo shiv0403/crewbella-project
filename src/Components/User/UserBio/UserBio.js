@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./UserBio.css";
 
 function UserBio({ user }) {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
 
   return (
     <div className={"userBio"}>
@@ -41,10 +41,7 @@ function UserBio({ user }) {
       <div className="userBio-details">
         <p className={"userBio-fullname"}>{user.basic.fullname}</p>
         <p className={"userBio-username"}>@{user.basic.username}</p>
-        <p className={"userBio-bio"}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque,
-          eligendi?
-        </p>
+
         <div className="userBio-followings">
           <p>
             <span style={{ color: "black", fontWeight: "bold" }}>
