@@ -1,27 +1,48 @@
-.userActivity-header {
+.userActivity {
   display: flex;
-  overflow-x: scroll;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.sidebar {
+  /*border: 1px solid #000;*/
   margin-top: 30px;
+  margin-bottom: 50px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+}
+
+.active-activity {
+  background-color: #ededed;
+  border-bottom: 5px solid #cd161c;
+}
+
+.userActivity-header {
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .userActivity-header::-webkit-scrollbar {
   display: none;
 }
 
-.userActivity-header {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
 .userActivity-header > li {
   list-style-type: none;
-  margin-right: 10px;
-  margin-left: 10px;
   width: 100%;
-  text-align: center;
-  letter-spacing: 0.5px;
+  padding: 20px;
+  text-align: left;
   font-weight: bold;
-  background-color: gray;
-  padding: 5px;
   cursor: pointer;
+  color: #000;
+  letter-spacing: 2px;
+}
+
+.userActivity-header > li:hover {
+  background-color: #ededed;
+}
+
+.activities {
+  width: 350px;
 }

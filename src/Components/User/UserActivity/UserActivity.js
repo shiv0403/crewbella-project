@@ -17,7 +17,7 @@ let activities = [
 ];
 
 function UserActivity({ user }) {
-  const [postings, setPostings] = useState(false);
+  const [postings, setPostings] = useState(true);
   const [events, setEvents] = useState(false);
   const [locations, setLocations] = useState(false);
   const [portfolio, setPortfolio] = useState(false);
@@ -68,21 +68,51 @@ function UserActivity({ user }) {
 
   return (
     <div className={"userActivity"}>
-      <ul className={"userActivity-header"}>
-        <li onClick={handleActivity}>Postings</li>
-        <li onClick={handleActivity}>Events</li>
-        <li onClick={handleActivity}>Locations</li>
-        <li onClick={handleActivity}>Portfolio</li>
-        <li onClick={handleActivity}>Professions</li>
-        <li onClick={handleActivity}>Interactions</li>
-      </ul>
-
-      {postings && <Postings userPostings={user.client_postings} />}
-      {events && <Events userEvents={user.events} />}
-      {locations && <Locations userLocations={user.locations} />}
-      {portfolio && <Portfolio userPortfolio={user.portfolio} />}
-      {professions && <Professions userProfessions={user.professions} />}
-      {interactions && <Interactions user={user} />}
+      <div className="sidebar">
+        <ul className={"userActivity-header"}>
+          <li
+            onClick={handleActivity}
+            className={postings && "active-activity"}
+          >
+            Postings
+          </li>
+          <li onClick={handleActivity} className={events && "active-activity"}>
+            Events
+          </li>
+          <li
+            onClick={handleActivity}
+            className={locations && "active-activity"}
+          >
+            Locations
+          </li>
+          <li
+            onClick={handleActivity}
+            className={portfolio && "active-activity"}
+          >
+            Portfolio
+          </li>
+          <li
+            onClick={handleActivity}
+            className={professions && "active-activity"}
+          >
+            Professions
+          </li>
+          <li
+            onClick={handleActivity}
+            className={interactions && "active-activity"}
+          >
+            Interactions
+          </li>
+        </ul>
+      </div>
+      <div className="activities">
+        {postings && <Postings userPostings={user.client_postings} />}
+        {events && <Events userEvents={user.events} />}
+        {locations && <Locations userLocations={user.locations} />}
+        {portfolio && <Portfolio userPortfolio={user.portfolio} />}
+        {professions && <Professions userProfessions={user.professions} />}
+        {interactions && <Interactions user={user} />}
+      </div>
     </div>
   );
 }
