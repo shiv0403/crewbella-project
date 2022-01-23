@@ -1,10 +1,13 @@
 import React from "react";
 import "./Events.css";
+import Event from "./Event/Event";
 
-function Events(props) {
+function Events({ userEvents }) {
   return (
     <div className={"events"}>
-      <h1>Events</h1>
+      {userEvents.map((event) => {
+        return <Event event={event} />;
+      })}
     </div>
   );
 }

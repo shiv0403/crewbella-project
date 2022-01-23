@@ -1,10 +1,13 @@
 import React from "react";
 import "./Professions.css";
+import Profession from "./Profession/Profession";
 
-function Professions(props) {
+function Professions({ userProfessions }) {
   return (
     <div className={"professions"}>
-      <h1>Professions</h1>
+      {userProfessions.map((profession) => {
+        return <Profession profession={profession} />;
+      })}
     </div>
   );
 }
