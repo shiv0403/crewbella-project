@@ -1,36 +1,35 @@
 import React from "react";
 import "./Posting.css";
-import { format, render, cancel, register } from "timeago.js";
+import { format } from "timeago.js";
+
+const opener = document.querySelectorAll(".opener");
+const cont = document.querySelectorAll(".content");
+const arrow = document.querySelectorAll(".opener i");
+
+function dropdown(open, content, icon) {
+  for (let i = 0; i < open.length; i++) {
+    open[i].addEventListener("click", function () {
+      content[i].classList.toggle("content-active");
+      icon[i].classList.toggle("rotate");
+      for (let j = 0; j < open.length; j++) {
+        if (i !== j) {
+          content[j].classList.remove("content-active");
+          icon[j].classList.remove("rotate");
+        }
+      }
+    });
+  }
+}
 
 function Posting({ posting }) {
-  const handleOpen = () => {
-    const opener = document.querySelectorAll(".opener");
-    const cont = document.querySelectorAll(".content");
-    const arrow = document.querySelectorAll(".opener i");
-
-    function dropdown(open, content, icon) {
-      for (let i = 0; i < open.length; i++) {
-        open[i].addEventListener("click", function () {
-          content[i].classList.toggle("content-active");
-          icon[i].classList.toggle("rotate");
-          for (let j = 0; j < open.length; j++) {
-            if (i !== j) {
-              content[j].classList.remove("content-active");
-              icon[j].classList.remove("rotate");
-            }
-          }
-        });
-      }
-    }
-
-    dropdown(opener, cont, arrow);
-  };
-
   return (
     <div className={"posting"}>
       <div
         className={
-          posting.is_active ? "posting-heading-open" : "posting-heading-close"
+          "posting-heading " +
+          `${
+            posting.is_active ? "posting-heading-open" : "posting-heading-close"
+          }`
         }
       >
         {posting.is_active ? <h1>OPEN</h1> : <h1>CLOSED</h1>}
@@ -93,7 +92,7 @@ function Posting({ posting }) {
         <div className="opener">
           <i
             className="fas fa-chevron-down"
-            onClick={handleOpen}
+            onClick={dropdown(opener, cont, arrow)}
             style={{ width: "20px" }}
           ></i>
           <p>{format(posting.created_at)}</p>
