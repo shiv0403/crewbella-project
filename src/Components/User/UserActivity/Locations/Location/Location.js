@@ -4,13 +4,7 @@ import "./Location.css";
 function Location({ location }) {
   return (
     <div className={"location"}>
-      <img
-        src={
-          "https://www.familytimemalta.com/wp-content/uploads/2018/11/place-icon.png"
-        }
-        alt={"location"}
-        className={"location-img"}
-      />
+      <img src={"/location.png"} alt={"location"} className={"location-img"} />
       <p className={"location-heading"}>
         Now available for work in{" "}
         <span style={{ fontWeight: "bold" }}>
