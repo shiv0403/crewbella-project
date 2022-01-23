@@ -77,7 +77,7 @@ function UserActivity({ user }) {
         <li onClick={handleActivity}>Interactions</li>
       </ul>
 
-      {postings && <Postings />}
+      {postings && <Postings userPostings={user.client_postings} />}
       {events && <Events />}
       {locations && <Locations />}
       {portfolio && <Portfolio />}

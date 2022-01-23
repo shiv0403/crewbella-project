@@ -1,0 +1,138 @@
+.posting {
+  width: 56%;
+  margin: 30px auto;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  border: none;
+  background-color: #fdfff2;
+}
+
+.posting-heading-open {
+  background-color: #08b808;
+  color: #fff;
+  font-style: italic;
+  letter-spacing: 10px;
+  text-align: center;
+  border-radius: 30px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  padding: 2px;
+}
+
+.posting-heading-close {
+  background-color: red;
+  color: #fff;
+  font-style: italic;
+  letter-spacing: 10px;
+  text-align: center;
+  border-radius: 30px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  padding: 2px;
+}
+
+.posting-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding: 20px;
+}
+
+.posting-detail {
+  text-align: center;
+}
+
+.posting-detail > h3 {
+  font-size: 15px;
+  letter-spacing: 0.7px;
+  font-weight: bold;
+}
+
+.posting-detail > p {
+  margin-top: 5px;
+  color: #545454;
+  letter-spacing: 1px;
+}
+
+.posting-description {
+  padding: 20px;
+  padding-top: -20px;
+  line-height: 1.5;
+}
+
+.posting-further {
+  padding: 20px;
+  margin-top: -10px;
+}
+
+.posting-furtherRow {
+  display: flex;
+  align-items: flex-start;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  line-height: 1.5;
+}
+
+.posting-further-heading {
+  font-weight: bold;
+  margin-right: 10px;
+  width: 60%;
+}
+
+.posting-further-text {
+  text-align: right;
+  width: 100%;
+}
+
+.posting-footer {
+  margin: -15px auto 10px 20px;
+  color: gray;
+}
+
+.opener {
+  width: 100%;
+  height: 30px;
+  padding: 0 0px;
+  margin-top: 10px;
+  margin-botton: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.opener i {
+  font-size: 15px;
+  transition: 0.5s ease;
+  color: gray;
+}
+
+.opener p {
+  margin-right: 20px;
+}
+
+.content {
+  width: 100%;
+  min-height: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  transition: 0.5s ease;
+}
+
+.content-active {
+  /*padding: 15px;*/
+  max-height: 200px;
+  min-height: 100px;
+  overflow: auto;
+  transition: 0.5s ease;
+  margin-bottom: 20px;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
