@@ -79,10 +79,10 @@ function UserActivity({ user }) {
 
       {postings && <Postings userPostings={user.client_postings} />}
       {events && <Events />}
-      {locations && <Locations />}
-      {portfolio && <Portfolio />}
+      {locations && <Locations userLocations={user.locations} />}
+      {portfolio && <Portfolio userPortfolio={user.portfolio} />}
       {professions && <Professions />}
-      {interactions && <Interactions />}
+      {interactions && <Interactions user={user} />}
     </div>
   );
 }

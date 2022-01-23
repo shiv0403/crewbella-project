@@ -1,10 +1,13 @@
 import React from "react";
 import "./Locations.css";
+import Location from "./Location/Location";
 
-function Locations(props) {
+function Locations({ userLocations }) {
   return (
     <div className={"locations"}>
-      <h1>Locations</h1>
+      {userLocations.map((location) => {
+        return <Location location={location} />;
+      })}
     </div>
   );
 }

@@ -1,10 +1,13 @@
 import React from "react";
 import "./Portfolio.css";
+import Work from "./Work/Work";
 
-function Portfolio(props) {
+function Portfolio({ userPortfolio }) {
   return (
     <div className={"portfolio"}>
-      <h1>Portfolio</h1>
+      {userPortfolio.map((work) => {
+        return <Work work={work} />;
+      })}
     </div>
   );
 }

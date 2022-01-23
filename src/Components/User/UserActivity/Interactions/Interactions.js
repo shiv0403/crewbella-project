@@ -1,10 +1,13 @@
 import React from "react";
 import "./Interactions.css";
+import Interaction from "./Interaction/Interaction";
 
-function Interactions(props) {
+function Interactions({ user }) {
   return (
     <div className={"interactions"}>
-      <h1>Interactions</h1>
+      {user.questions.map((interaction) => {
+        return <Interaction user={user} interaction={interaction} />;
+      })}
     </div>
   );
 }
