@@ -131,11 +131,3 @@
 .rotate {
   transform: rotate(180deg);
 }
-
-.posting-hidden {
-  transition: 0.5s ease;
-}
-
-.posting-active {
-  transition: 0.5s ease;
-}
