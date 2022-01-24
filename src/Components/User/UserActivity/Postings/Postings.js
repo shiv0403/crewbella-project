@@ -10,9 +10,15 @@ SwiperCore.use([Thumbs, Navigation, Pagination]);
 function Postings({ userPostings }) {
   return (
     <div className={"postings"}>
-      {userPostings.map((posting) => {
-        return <Posting posting={posting} />;
-      })}
+      {userPostings.length > 0 ? (
+        userPostings?.map((posting) => {
+          return <Posting posting={posting} />;
+        })
+      ) : (
+        <div className={"postings-no"}>
+          <h3>No Postings</h3>
+        </div>
+      )}
     </div>
   );
 }

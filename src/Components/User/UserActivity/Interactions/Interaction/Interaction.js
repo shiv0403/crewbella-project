@@ -8,7 +8,7 @@ function Interaction({ user, interaction }) {
   return (
     <div className={"interaction"}>
       <div className="interaction-header">
-        <h3 style={{ fontWeight: "bold", color: "red" }}>
+        <h3 style={{ fontWeight: "10000", color: "red" }}>
           <i>QUESTION</i>
         </h3>
         <p>{format(interaction.created_at)}</p>

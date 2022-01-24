@@ -1,0 +1,7 @@
+.interactions-no {
+  font-size: 2rem;
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  color: #6ac4fc;
+}

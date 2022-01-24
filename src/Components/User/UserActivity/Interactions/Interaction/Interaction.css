@@ -20,14 +20,13 @@
 .interaction-userImg {
   object-fit: cover;
   height: 50px;
-  width: 70px;
+  width: 50px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .interaction-opener {
   padding: 0 0px;
-  margin-botton: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -46,7 +45,6 @@
   padding: 10px;
   transition: 0.5s ease;
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
 }
 

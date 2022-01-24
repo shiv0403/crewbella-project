@@ -56,15 +56,17 @@ function UserBio({ user }) {
         </div>
         {active && (
           <div className="userBio-dates">
-            <p style={{ marginTop: "5px" }}>
-              <i
-                className="fas fa-birthday-cake"
-                style={{ marginRight: 7, color: "gray" }}
-              ></i>
-              <span style={{ fontSize: "13px" }}>
-                Date of Birth : {user.basic.dob}
-              </span>
-            </p>
+            {user.basic.dob && (
+              <p style={{ marginTop: "5px" }}>
+                <i
+                  className="fas fa-birthday-cake"
+                  style={{ marginRight: 7, color: "gray" }}
+                ></i>
+                <span style={{ fontSize: "13px" }}>
+                  Date of Birth : {user.basic.dob}
+                </span>
+              </p>
+            )}
             <p style={{ marginTop: "5px" }}>
               <i
                 className="fas fa-calendar"

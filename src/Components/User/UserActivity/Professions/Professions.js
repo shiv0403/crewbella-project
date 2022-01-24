@@ -5,9 +5,15 @@ import Profession from "./Profession/Profession";
 function Professions({ userProfessions }) {
   return (
     <div className={"professions"}>
-      {userProfessions.map((profession) => {
-        return <Profession profession={profession} />;
-      })}
+      {userProfessions.length > 0 ? (
+        userProfessions.map((profession) => {
+          return <Profession profession={profession} />;
+        })
+      ) : (
+        <div className={"profession-no"}>
+          <h3>No Professions</h3>
+        </div>
+      )}
     </div>
   );
 }
